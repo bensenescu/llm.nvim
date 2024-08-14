@@ -125,6 +125,7 @@ local group = vim.api.nvim_create_augroup("LLM_AutoGroup", { clear = true })
 local active_job = nil
 
 function M.invoke_llm_and_stream_into_editor(opts, make_curl_args_fn, handle_data_fn)
+	print("Invoking LLM...")
 	-- Clean up previous invocations of this function if they haven't finished
 	-- 1. Clear any existing autocmds that weren't cleaned up properly before starting a new job
 	vim.api.nvim_clear_autocmds({ group = group })
